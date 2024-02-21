@@ -54,7 +54,7 @@ namespace TestArea
             }
 
             // Assert
-            Assert.Equal("Радиус должен быть больше нуля", exception.Message);
+            Assert.Equal("Radius must be greater than zero", exception.Message);
         }
 
         [Fact]
@@ -74,7 +74,7 @@ namespace TestArea
             }
 
             // Assert
-            Assert.Equal("Сторона должна быть больше нуля", exception.Message);
+            Assert.Equal("The side must be greater than zero", exception.Message);
 
         }
 
@@ -95,7 +95,7 @@ namespace TestArea
             }
 
             // Assert
-            Assert.Equal("Сумма двух сторон треугольника всегда должна быть больше третьей", exception.Message);           
+            Assert.Equal("The sum of two sides of a triangle must always be greater than the third", exception.Message);           
         }
     }
 }

@@ -13,7 +13,7 @@ namespace GetArea
         {
             if (radius < 0)
             {
-                throw new ArgumentException("Радиус должен быть больше нуля");
+                throw new ArgumentException("Radius must be greater than zero");
             }
             this.radius = radius;
         }

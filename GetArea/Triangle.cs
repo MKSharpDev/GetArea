@@ -16,11 +16,11 @@ namespace GetArea
         {
             if (a < 0 || b < 0 || c < 0)
             {
-                throw new ArgumentException("Сторона должна быть больше нуля");
+                throw new ArgumentException("The side must be greater than zero");
             }
             if (a + b < c || b + c < a || c + a < b)
             {
-                throw new ArgumentException("Сумма двух сторон треугольника всегда должна быть больше третьей");
+                throw new ArgumentException("The sum of two sides of a triangle must always be greater than the third");
             }
             this.a = a;
             this.b = b;
