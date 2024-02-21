@@ -1,0 +1,36 @@
+
+-- create
+
+CREATE TABLE CATEGORIES(
+  categoryId int,
+  name varchar(100),
+  PRIMARY KEY (categoryId),
+);
+
+CREATE TABLE PRODUCTS (
+  productId int,
+  name varchar(100),
+  categoryId int,
+  PRIMARY KEY (productId),
+    FOREIGN KEY (categoryId) REFERENCES CATEGORIES(categoryId)
+);
+
+-- insert
+
+INSERT INTO CATEGORIES(categoryId,name) VALUES (0001, 'dairy ');
+INSERT INTO CATEGORIES(categoryId,name) VALUES (0002, 'tools');
+INSERT INTO CATEGORIES(categoryId,name) VALUES (0003, 'alcohol');
+INSERT INTO CATEGORIES(categoryId,name) VALUES (0004, 'Appliances');
+
+INSERT INTO PRODUCTS(productId,name,categoryId) VALUES (0001, 'milk', 0001);
+INSERT INTO PRODUCTS(productId,name,categoryId) VALUES (0002, 'cheese', 0001);
+INSERT INTO PRODUCTS(productId,name,categoryId) VALUES (0003, 'jin', 0003);
+INSERT INTO PRODUCTS(productId,name,categoryId) VALUES (0004, 'TV', 0004);
+INSERT INTO PRODUCTS(productId,name) VALUES (0005, 'ferrary');
+
+-- fetch 
+
+SELECT PRODUCTS.name, CATEGORIES.name
+FROM PRODUCTS
+LEFT JOIN CATEGORIES 
+ON PRODUCTS.categoryId = CATEGORIES.categoryId;
