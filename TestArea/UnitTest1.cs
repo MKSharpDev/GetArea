@@ -40,43 +40,62 @@ namespace TestArea
         [Fact]
         public void SetCircle_WhenRadiusNegative()
         {
+            // Arrange
+            Exception exception = new Exception();
+
+            // Act
             try
             {
                 var circle = new Circle(-1.6);
             }
             catch (Exception ex)
             {
-
-                Assert.Equal("Радиус должен быть больше нуля", ex.Message);
+                exception = ex;
             }
+
+            // Assert
+            Assert.Equal("Радиус должен быть больше нуля", exception.Message);
         }
 
         [Fact]
         public void SetTriangle_WhenSidesNegative()
         {
+            // Arrange
+            Exception exception = new Exception();
+
+            // Act           
             try
             {
                 var triangle = new Triangle(-1.4, 2.0, 2.5);
             }
             catch (Exception ex)
             {
-
-                Assert.Equal("Сторона должна быть больше нуля", ex.Message);
+                exception = ex;
             }
+
+            // Assert
+            Assert.Equal("Сторона должна быть больше нуля", exception.Message);
+
         }
 
         [Fact]
         public void SetTriangle_WhenSideGreterThenOther()
         {
+            // Arrange
+            Exception exception = new Exception();
+
+            // Act   
             try
             {
                 var triangle = new Triangle(1.4, 2.0, 5);
             }
             catch (Exception ex)
             {
-
-                Assert.Equal("Сумма двух сторон треугольника всегда должна быть больше третьей", ex.Message);
+                exception = ex;
             }
+
+            // Assert
+            Assert.Equal("Сумма двух сторон треугольника всегда должна быть больше третьей", exception.Message);           
         }
     }
 }
